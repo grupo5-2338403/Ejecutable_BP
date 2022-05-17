@@ -1,0 +1,106 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: cursive;
+    border: 0px;
+    /* background-color: white; */
+}
+.fondo{
+    position: fixed;
+    margin: 100px 30%;
+    z-index: -23;
+}
+#header{
+    text-align: right;
+    width: 15rem;
+    /* border: 1px solid red; */
+    background-color: red;
+    margin: 0px 0px 0px auto;
+    border-bottom-left-radius: 50px ;
+    /* width:100% */
+    padding: 0px;
+    
+}
+.logo{
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    color:white;
+    column-gap: 20px;
+}
+
+/* Aquí esta esta creado la decoración periferica del formulario */
+#body{
+    width: 100%;
+    margin: 0px auto;
+    box-sizing: border-box;
+    background-color: rgb(235, 235, 235);
+
+}
+
+.section{
+    display: grid;
+    width: 90%;
+    margin: 0px auto;
+
+}
+.compras{
+    display: grid;
+    margin: 20px 0px;
+}
+.titulos{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.contenido{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.a1{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+hr{
+    border: 1px solid black;
+}
+
+
+.contenedor_botones{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 30px;
+}
+.contenedor_envio{
+    text-align: right;
+    margin-right: 15px;
+   
+}
+.boton_enviar{
+    background-color: green;
+    color:white;
+    width: 5em;
+    margin-top: 20px;
+    border-radius: 1em;
+    padding: 2px 0px;
+    font-size: 15px;
+    font-weight: none;
+}
+.boton_cancelar{
+    margin-top: 20px;
+    background-color: green;
+    color:white;
+    width: 3em;
+    border-radius: 1em;
+    padding: 2px 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: none;
+}
+.desaparece{
+    display:none;
+}
+.boton_selec:hover{
+    background-color: black;
+}

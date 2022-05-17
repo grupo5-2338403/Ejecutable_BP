@@ -1,0 +1,127 @@
+*{
+    margin: 0px; 
+    padding: 0px; 
+    font-family: cursive;
+}
+#body{
+    background-color: red;
+}
+#header{
+    display:inline-block;
+    width: 100%; 
+}
+.logoName{
+    float:left;
+    color:white;
+    font-size: 50px;
+    padding-left: 3% ;
+    padding-top: 1.5%;
+}
+.logo{
+    width: 10%;
+    float:right;
+    padding-right: 3%;
+    padding-top: 1.5%; 
+}
+#section{
+    background-color: rgb(235, 235, 235);
+    width: 40%;;
+    margin: 35px auto;
+    height: 300px;
+    border: 2px solid rgb(235, 235, 235);
+    border-radius: 1em;
+}
+#form{
+    display:grid; 
+    grid-template-rows: repeat(6, 1fr );
+    margin: 5% 10% ;
+    row-gap: 20px;    
+}
+.recuperar{
+    text-align: center;
+}
+.botones{
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+}
+.iniciar{
+    margin-left:auto ;
+    background-color: green;
+    color:white;
+    text-decoration: none;
+    width: 7em;
+    border-radius: 1em;
+    font-size: 16px;
+    padding: 1px 0px 1px 0px;
+    font-weight: none;
+    border: none;
+}
+    /* background-color: green;
+    color:white;
+    width: 6em;
+    border-radius: 1em;
+    padding: 2px 0px;
+    font-size: 15px;
+    font-weight: none; */
+.iniciar:hover{
+    background-color: rgb(0, 37, 0);
+}
+
+.registrarse{
+    background-color: green;
+    color:white;
+    text-decoration: none;
+    width: 6em;
+    border-radius: 1em;
+    padding: 1px 0px 1px 8px;
+}
+.registrarse:hover{
+    background-color: rgb(0, 37, 0);
+}
+
+
+#footer{
+    position:fixed;
+    bottom: 5%;left: 5%;
+}
+.volver{
+    color:white;
+    font-size: 20px;
+    text-decoration: none; 
+}
+.volver:hover{
+    background-color: black;
+}
+.desaparecer{
+    display: none;
+}
+@media (max-width:820px){
+    #section{
+        width: 60%;
+    }
+}
+@media (max-width:500px){
+    .logoName{
+        font-size: 30px;
+    }
+    #section{
+        width: 80%;
+    }
+    .logo{
+        width: 20%;
+    }
+}
+@media (max-width:320px){
+    #section{
+        width: 90%;
+    }
+}
+@media (max-width:290px){
+    #section{
+        width: 90%;
+    }
+    #form{
+        margin:5% 1%;
+    }
+    
+}

@@ -1,0 +1,103 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: cursive;
+    border: 0px;
+    /* background-color: white; */
+}
+.fondo{
+    position: fixed;
+    margin: 120px 30%;
+    z-index: -23;
+}
+#header{
+    text-align: right;
+    width: 15rem;
+    /* border: 1px solid red; */
+    background-color: red;
+    margin: 0px 0px 0px auto;
+    border-bottom-left-radius: 50px ;
+    /* width:100% */
+    padding: 0px;
+    
+}
+.logo{
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    color:white;
+    column-gap: 20px;
+}
+#body{
+    width: 100%;
+    margin: 0px auto;
+    box-sizing: border-box;
+    background-color: rgb(235, 235, 235);
+
+}
+
+.formulario{
+    width: 26%;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 90px auto;
+    gap:5px;
+}
+/* clase para los contenedores   */
+/* .a1{
+    display: grid;
+    padding-right: 20px; 
+} */
+
+.contenedor_cancelar{
+    grid-column: 1/2;
+}
+/* .contenedor_envio{
+    text-align: ;
+} */
+
+.boton_enviar{
+    background-color: green;
+    color:white;
+    width: 6em;
+    border-radius: 1em;
+    padding: 2px 0px;
+    /* font-family: cursive; */
+    font-size: 15px;
+    font-weight: none;
+    margin-top: 20px;
+}
+.creados{
+    margin: 4px 0px;
+    background-color: rgba(235, 235, 235, 0);
+    font-size: 14px;
+    
+}
+.boton_cancelar{
+    background-color: green;
+    color:white;
+    width: 6em;
+    border-radius: 1em;
+    padding: 2px 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: none;
+}
+.boton{
+    background-color: green;
+    color:white;
+    width: 6em;
+    border-radius: 1em;
+    padding: 2px 0px;
+    /* font-family: cursive; */
+    font-size: 15px;
+    font-weight: none;
+    /* margin-top: 20px; */
+}
+.boton_selec:hover{
+    background-color: black;
+}
+.desaparecer{
+    display:none;
+}
