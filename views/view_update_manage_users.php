@@ -1,27 +1,18 @@
-<?php
-    require "../Controladores/class_usuarios.php"
-?>
-<?php require "./actualizar.php" ?>
-
 <!DOCTYPE html>
-<html lang="es">
+<!-- language -->
+<?php include_once "../static/language.php" ?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="styles.css">
+    <?php require_once "../models/model_update_manage_users.php" ?>
+    <?php require_once ("../controllers/class_users.php"); ?>
+    <?php include_once "../static/head/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_update_manage_users.css">
 </head>
-<img src="../Imagenes/Logo/logo_fondo_2.PNG" alt="" class="fondo">
-<header id=header>
-    <div class="logo">
-        <h2>Imagitec</h2>
-        <img src="../Imagenes/Logo/logo_red.PNG" alt="Logo" width=100px>
-    </div>
-</header>
+<!-- header secondary page -->
+<?php include_once "../static/headers/headers_secondary_page.php" ?>
+
 <body id="body">
     <!-- inicio del formulario -->
-    <form action="./actualizar.php" method="POST" class="formulario">
+    <form action="../models/model_update_manage_users.php" method="POST" class="formulario">
 
         <!-- contenedor nombre -->
         <div class="a1">
@@ -108,7 +99,7 @@
         </div>
         
         <div class="contenedor_cancelar">
-            <a href="../Administrar_usuarios/index.php" class="boton_cancelar boton_selec">Cancelar</a>
+            <a href="./view_manage_users.php" class="boton_cancelar boton_selec">Cancelar</a>
         </div>
         <div class="contenedor_envio">
             <input type="submit" value="Guardar" name="guardar" class="boton_enviar boton_selec">

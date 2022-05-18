@@ -1,5 +1,5 @@
 <?php
-    require("../Controladores/class_producto.php");
+    require("../controllers/class_product.php");
         
     if(isset($_POST["enviar"])){
         $ruta = '../Imagenes/' . $_FILES["imagen"]["name"];

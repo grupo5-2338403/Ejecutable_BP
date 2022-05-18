@@ -31,7 +31,7 @@
             $result = $database->prepare($sql);
             $result -> execute(array( ":foto"=> $this -> strFoto, ":nombre"=>$this -> strNombre, ":valor"=>$this -> floatValor, ":stock"=>$this -> intStock, ":estado"=> $this -> intEstado, ":categorias"=>$this -> intCategoria,":marca"=>$this->intMarca, ":descripcion"=>$this -> strDescripcion));
             echo ("listo");
-            header("Location:../Principal/Index.php");
+            header("Location:../views/index.php");
         }
         public function actualizar_producto($id){
             $this -> intId = intval($id);

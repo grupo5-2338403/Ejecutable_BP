@@ -14,7 +14,7 @@
         $rol = $_GET["rol"];      
     }
     else{
-        require("../Controladores/class_usuarios.php");
+        require_once("../controllers/class_users.php");
         $nombre = $_POST["nombre_persona"];
         $apellido = $_POST["apellido_persona"];
         $tipo = $_POST["tipo_documento"];

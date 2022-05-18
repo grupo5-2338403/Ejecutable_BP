@@ -50,8 +50,7 @@
             $sql ="UPDATE usuarios SET nombre_persona=:nombre, apellido_persona=:apellido, numero_identificación=:documento, nameuser=:usuario, celuar=:celular, fijo=:fijo, direccion=:direccion, ciudad_id_ciudad=:ciudad, tipo_de_documento_id_tipo=:tipo, rol_id_rol=:rol WHERE id_usuario=:id";
             $info = $database->prepare($sql);
             $info -> execute(array(":nombre"=>$this -> strNombre, ":apellido"=>$this -> strApellido, ":documento"=>$this -> intDocumento, ":usuario"=>$this -> strUsername, ":celular"=>$this -> intCelular, ":fijo"=> $this-> intFijo, ":direccion"=> $this-> strDireccion, ":ciudad"=>$this -> intCiudad, ":tipo"=> $this-> intTipo, ":rol"=>$this -> intRol, ":id"=> $this-> intId));
-
-            header("Location:../Administrar_usuarios/index.php");
+            header("Location:../views/view_manage_users.php");
         }
 
         public static function borrar_usuario($id){
@@ -59,7 +58,7 @@
             // echo var_dump($id);
             include("../conectar_BD_2.php");
             $database->query( "DELETE FROM usuarios WHERE id_usuario='$id'");
-            header("Location:../Administrar_usuarios/index.php");
+            header("Location:../views/view_manage_users.php");
         }  
 
         static function traer_nombre($condicion, $base, $busca, $traer){

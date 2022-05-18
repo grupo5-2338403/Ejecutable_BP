@@ -1,28 +1,21 @@
-<?php
-    require ("../Controladores/class_usuarios.php");
-    
-?>
 
 <!DOCTYPE html>
-<html lang="es">
+<!-- language -->
+<?php include_once "../static/language.php" ?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="styles.css">
+    <?php require_once ("../controllers/class_users.php"); ?>
+    <?php include_once "../static/head/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_manage_users.css">
+
 </head>
-<img src="../Imagenes/Logo/logo_fondo_2.PNG" alt="" class="fondo">
-<header id=header>
-    <div class="logo">
-        <h2>Imagitec</h2>
-        <img src="../Imagenes/Logo/logo_red.PNG" alt="Logo" width=100px>
-    </div>
-</header>
+<!-- header secondary page -->
+<?php include_once "../static/headers/headers_secondary_page.php" ?>
+
+
 <body id="body">
 
     <section class="section">
-        <?php require "../conectar_BD_2.php";
+        <?php require_once "../conectar_BD_2.php";
                 $info = $database -> query("SELECT * FROM usuarios")->fetchAll(PDO::FETCH_OBJ);
                 foreach ($info as $product):
         ?>
@@ -45,7 +38,7 @@
                     
                 </div>
                 <div class="contenedor_2">
-                    <a class="boton boton_selec" href="../Administrar_usuarios_actualizar/index.php?id_usuario=<?php echo $product->id_usuario?> & tipo=<?php echo $product -> tipo_de_documento_id_tipo ?> & ciudad=<?php echo $product->ciudad_id_ciudad?> & rol=<?php echo $product->rol_id_rol?> & nombre_persona=<?php echo $product->nombre_persona?> & apellido_persona=<?php echo $product->apellido_persona?> & numero_identificacion=<?php echo $product->numero_identificación?>  & nameuser=<?php echo $product->nameuser?> & celular=<?php echo $product->celuar?>  & fijo=<?php echo $product->fijo?> & direccion=<?php echo $product->direccion?> ">Modificar</a>
+                    <a class="boton boton_selec" href="./view_update_manage_users.php?id_usuario=<?php echo $product->id_usuario?> & tipo=<?php echo $product -> tipo_de_documento_id_tipo ?> & ciudad=<?php echo $product->ciudad_id_ciudad?> & rol=<?php echo $product->rol_id_rol?> & nombre_persona=<?php echo $product->nombre_persona?> & apellido_persona=<?php echo $product->apellido_persona?> & numero_identificacion=<?php echo $product->numero_identificación?>  & nameuser=<?php echo $product->nameuser?> & celular=<?php echo $product->celuar?>  & fijo=<?php echo $product->fijo?> & direccion=<?php echo $product->direccion?> ">Modificar</a>
                 </div>
                 <div>
                     <div class="contenedor_1">    
@@ -66,7 +59,7 @@
                     </div>
                 </div>
                 <div class="contenedor_2">
-                    <a class="boton boton_selec" href="./borrar.php?id_usuario=<?php echo $product->id_usuario ?>">Eliminar</a>
+                    <a class="boton boton_selec" href="../models/model_delete_manage_users.php?id_usuario=<?php echo $product->id_usuario ?>">Eliminar</a>
                 </div>
                 <div class ="desaparecer">
                     <input type="text" value="<?php echo $product->id_usuario ?>">
@@ -74,7 +67,7 @@
             </article>
         <?php endforeach;?>
         <div class="contenedor_cancelar">
-            <a href="../Administrar/index.php" class="boton_cancelar boton_selec">Volver</a>
+            <a href="./view_manage.php" class="boton_cancelar boton_selec">Volver</a>
         </div>
     </section>
     </form>
