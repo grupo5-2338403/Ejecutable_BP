@@ -1,5 +1,5 @@
 <?php
-    require("../Controladores/class_usuarios.php");
+    require("../controllers/class_users.php");
     
     if(isset($_POST["guardar"])){
         $nombre = $_POST["nombre_persona"];

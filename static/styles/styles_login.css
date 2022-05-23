@@ -1,8 +1,4 @@
-*{
-    margin: 0px; 
-    padding: 0px; 
-    font-family: cursive;
-}
+
 #body{
     background-color: red;
 }
@@ -94,34 +90,4 @@
 }
 .desaparecer{
     display: none;
-}
-@media (max-width:820px){
-    #section{
-        width: 60%;
-    }
-}
-@media (max-width:500px){
-    .logoName{
-        font-size: 30px;
-    }
-    #section{
-        width: 80%;
-    }
-    .logo{
-        width: 20%;
-    }
-}
-@media (max-width:320px){
-    #section{
-        width: 90%;
-    }
-}
-@media (max-width:290px){
-    #section{
-        width: 90%;
-    }
-    #form{
-        margin:5% 1%;
-    }
-    
 }

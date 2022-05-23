@@ -1,22 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- language -->
+<?php include_once "../static/language.php" ?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="styles.css">
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_create_users.css">
+
 </head>
-<img src="../Imagenes/Logo/logo_fondo_2.PNG" alt="" class="fondo">
-<header id=header>
-    <div class="logo">
-        <h2>Imagitec</h2>
-        <img src="../Imagenes/Logo/logo_red.PNG" alt="Logo" width=100px>
-    </div>
-</header>
+<!-- header secondary page -->
+<?php include_once "../static/headers/headers_secondary_page.php" ?>
+
 <body id="body">
     <!-- inicio del formulario -->
-    <form action="./enviar.php" method="POST" class="formulario">
+    <form action="../models/model_create_users.php" method="POST" class="formulario">
         <!-- contenedor nombre -->
         <div class="a1">
             <label for="nombre_persona">Nombre</label>
@@ -31,16 +26,8 @@
         <div class="a1">
             <label for="tipo_documento">Tipo de documento</label>
             <select class="a2" name="tipo_documento">
-                <?php 
-                    require "../conectar_BD_2.php";
-                    $info = $database -> query("SELECT * FROM tipo_de_documento")->fetchAll(PDO::FETCH_OBJ);
-                    foreach ($info as $product): 
-                ?>
-                    <option value="<?php echo $product->id_tipo?>"><?php echo $product -> nombre_del_tipo ?></option>
-                <?php 
-                     endforeach;
-                ?>
-            </select>
+                                    <option value="1">CC</option>
+                            </select>
         </div>
         <!-- contenedor numero de documento -->
         <div class="a1">
@@ -76,13 +63,8 @@
         <div class="a1">
             <label for="ciudad">Ciudad</label>
             <select class="a2" name="ciudad" class="a2">
-                <?php 
-                    require "../conectar_BD_2.php";
-                    $info = $database -> query("SELECT * FROM ciudad") -> fetchAll(PDO::FETCH_OBJ);
-                    foreach ($info as $product):
-                ?>
-                <option value="<?php echo $product -> id_ciudad?>"><?php echo $product -> nombre_ciudad?></option>
-                <?php endforeach; ?>            
+                                <option value="1">Bogotá</option>
+                            
             </select>
         </div>
         <!-- Contenedor rol -->
@@ -90,16 +72,9 @@
         <div class="desaparecer">
             <label for="rol">Rol</label>
             <select class="a2" name="rol">
-                <?php require("./enviar.php"); ?>
-                <?php 
-                    require "../conectar_BD_2.php";
-                    $info = $database -> query("SELECT * FROM rol") -> fetchAll(PDO::FETCH_OBJ);
-                    foreach ($info as $product):
-                ?>
-                <option value="<?php echo $product-> id_rol?>" <?php echo elegir_cliente( $product->id_rol )?>><?php echo $product-> nombre_rol?></option>
-                <?php 
-                endforeach; 
-                ?>            
+                                                <option value="1" selected>Administrador</option>
+                                <option value="2" selected>Cliente</option>
+                            
             </select>
         </div>
         <!-- Contenedor términos y condiciones -->
@@ -109,7 +84,7 @@
         </div>
         
         <div class="contenedor_cancelar">
-            <a href="../Principal/Index.php" class="boton_cancelar boton_selec">Cancelar</a>
+            <a href="./view_login.php" class="boton_cancelar boton_selec">Cancelar</a>
         </div>
         <div class="contenedor_envio">
             <input type="submit" value="Guardar" name="guardar" class="boton_enviar boton_selec">

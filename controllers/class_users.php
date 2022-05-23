@@ -41,7 +41,7 @@
             $sql = "INSERT INTO usuarios (nombre_persona, apellido_persona, numero_identificación, nameuser, password_persona, celuar, fijo, direccion, ciudad_id_ciudad, tipo_de_documento_id_tipo, rol_id_rol) VALUES (:nombre, :apellido, :documento, :usuario, :pass, :celular, :fijo, :direccion, :ciudad, :tipo, :rol)";
             $product = $database->prepare($sql);
             $product -> execute(array( ":nombre"=> $this -> strNombre, ":apellido"=>$this -> strApellido, ":documento"=>$this -> intDocumento, ":usuario"=>$this -> strUsername, ":pass"=> $this -> strPassword, ":celular"=>$this -> intCelular, ":fijo"=>$this -> intFijo, ":direccion"=>$this -> strDireccion, ":ciudad"=>$this -> intCiudad, ":tipo"=>$this -> intTipo, ":rol"=>$this -> intRol));
-            header("Location:../Iniciar_sesion/index.php");
+            header("Location:../views/index.php");
         }
 
         public function actualizar_usuario($id){
@@ -97,12 +97,12 @@
                     $_SESSION["id_usuario"] = $id;
                     $_SESSION["producto"] = array();
 
-                    header("Location:../Principal/Index.php");                  
+                    header("Location:../views/index.php");                  
                 endforeach;
             }
             else{                
                 
-                header("Location:../Iniciar_sesion/index.php?alarma=1");
+                header("Location:../views/view_login.php?alarma=1");
             }
         }
 

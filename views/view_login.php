@@ -9,21 +9,18 @@
     }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<?php include_once "../static/language.php"?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="style.css">
+    <?php include_once "../static/heads/head_without_styles.php"?>
+    <link rel="stylesheet" href="../static/styles/styles_login.css">
 </head>
+<header id="header">
+    <h1 class="logoName">Imagitec</h1>
+    <img src="../data/images/internal/logo/logo_red.PNG" alt="" class="logo">
+</header>
 <body id="body">
-    <header id="header">
-        <h1 class="logoName">Imagitec</h1>
-        <img src="../Imagenes/Logo/logo_red.PNG" alt="" class="logo">
-    </header>
     <section id="section">
-        <form action="./iniciar.php" id="form" method="post">
+        <form action="../models/model_login.php" id="form" method="post">
             <label for="usuario" >Usuario</label>
             <input type="text" id="usuario" placeholder="example@example.com" name="usuario">
             <Label for="password">Contraseña</Label>
@@ -33,14 +30,13 @@
             </div>
             <a href="#recuperar" class="recuperar">Recuperar mi contraseña</a>
             <div class="botones">
-                <a href="../Usuarios/index.php" class="registrarse">Registrarse</a>
+                <a href="./view_create_users.php" class="registrarse">Registrarse</a>
                 <input type="submit" class="iniciar" value="Iniciar sesión" name="iniciar">
             </div>
         </form>
     </section>
     <footer id="footer">
-        <a href="../Principal/Index.php" class="volver">Volver</a>
+        <a href="./index.php" class="volver">Volver</a>
     </footer>
-    
 </body>
 </html>

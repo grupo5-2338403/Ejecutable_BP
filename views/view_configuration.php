@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- language -->
+<?php include_once "../static/language.php" ?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="styles.css">
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_configuration.css">
 </head>
-<img src="../Imagenes/Logo/logo_fondo_2.PNG" alt="" class="fondo">
-<header id=header>
-    <div class="logo">
-        <h2>Imagitec</h2>
-        <img src="../Imagenes/Logo/logo_red.PNG" alt="Logo" width=100px>
-    </div>
-</header>
+<!-- header secondary page -->
+<?php include_once "../static/headers/headers_secondary_page.php" ?>
+
 <body id="body">
     <!-- inicio del formulario -->
     
@@ -23,7 +17,7 @@
 
             <h2 class = "titulo">Usuarios</h2>
             <div>
-                <p>Ciudades</p>  <a href="../Configuracion_ciudades" class="boton boton_selec">Editar</a>
+                <p>Ciudades</p>  <a href="./view_configuration_cities.php" class="boton boton_selec">Editar</a>
             </div>
             <div>
                 <p>Tipos de documentos</p> <a href="../Configuracion_tipo" class="boton boton_selec">Editar</a>
@@ -52,7 +46,7 @@
             </div>
         </div>
         <div class="contenedor_cancelar">
-            <a href="../Principal/Index.php" class="boton_cancelar boton_selec">Volver</a>
+            <a href="./index.php" class="boton_cancelar boton_selec">Volver</a>
         </div>
     </div>
 </body>

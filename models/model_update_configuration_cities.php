@@ -1,5 +1,5 @@
 <?php
-    include ("../Controladores/class_ciudad.php");
+    include ("../controllers/class_cities.php");
     if (!isset($_POST["guardar"])){
         $id_ciudad = $_GET["id_ciudad"];
         $nombre_ciudad = $_GET["nombre_ciudad"];

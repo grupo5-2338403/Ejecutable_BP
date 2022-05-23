@@ -4,7 +4,7 @@
 <?php include_once "../static/language.php" ?>
 <head>
     <?php require_once ("../controllers/class_users.php"); ?>
-    <?php include_once "../static/head/head_secondary_page.php" ?>
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_manage_users.css">
 
 </head>

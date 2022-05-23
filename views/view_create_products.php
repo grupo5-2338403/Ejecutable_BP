@@ -3,9 +3,8 @@
 <?php include_once "../static/language.php" ?>
 <head>
     <?php require_once ("../controllers/class_users.php"); ?>
-    <?php include_once "../static/head/head_secondary_page.php" ?>
-    <link rel="stylesheet" href="../static/styles/styles_create_products.css">
-
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_create_products.css"> 
 </head>
 <!-- header secondary page -->
 <?php include_once "../static/headers/headers_secondary_page.php" ?>

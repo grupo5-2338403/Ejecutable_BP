@@ -4,7 +4,7 @@
 <head>
     <?php require_once "../models/model_update_manage_users.php" ?>
     <?php require_once ("../controllers/class_users.php"); ?>
-    <?php include_once "../static/head/head_secondary_page.php" ?>
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_update_manage_users.css">
 </head>
 <!-- header secondary page -->
