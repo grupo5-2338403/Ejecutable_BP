@@ -34,6 +34,5 @@
             $database->query( "DELETE FROM estado WHERE id_estado='$id'");
             header("Location:../Configuracion_estado/index.php");
         }
-
     }
 ?>

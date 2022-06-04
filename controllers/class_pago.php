@@ -12,7 +12,6 @@
         
         public function crear_pago(){
             include("../conectar_BD_2.php");
-            $info = $database -> query("SELECT * FROM pago")->fetchAll(PDO::FETCH_OBJ);
             $sql = "INSERT INTO pago (metodo_de_pago) VALUES (:pago)"; 
             $result = $database->prepare($sql);
             $result -> execute (array(":pago"=> $this -> strNombre));

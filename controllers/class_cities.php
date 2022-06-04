@@ -12,7 +12,6 @@
         
         public function crear_ciudad(){
             include("../conectar_BD_2.php");
-            $info = $database -> query("SELECT * FROM ciudad")->fetchAll(PDO::FETCH_OBJ);
             $sql = "INSERT INTO ciudad (nombre_ciudad) VALUES (:ciudad)"; 
             $result = $database->prepare($sql);
             $result -> execute (array(":ciudad"=> $this -> strNombre));
