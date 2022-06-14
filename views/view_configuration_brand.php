@@ -26,7 +26,7 @@
                 <input type="text" name="" class="creados" value="<?php echo $product -> nombre_marca?>" readonly>
 
                 <a href="./view_update_configuration_brand.php?id_marca=<?php echo $product -> id_marca?> & nombre_marca=<?php echo $product->nombre_marca?>" class="boton_cancelar boton_selec">Editar</a>
-                <a href="../models/model_delete_configuration_brand.php?id_marca=<?php echo $product -> id_marca ?>" class="boton_cancelar boton_selec">Borrar</a>
+                <!-- <a href="../models/model_delete_configuration_brand.php?id_marca=<?php echo $product -> id_marca ?>" class="boton_cancelar boton_selec">Borrar</a> -->
                  
                 <?php endforeach;?>
             </div>
