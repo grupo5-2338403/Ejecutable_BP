@@ -20,7 +20,7 @@
                 <p>Ciudades</p>  <a href="./view_configuration_cities.php" class="boton boton_selec">Editar</a>
             </div>
             <div>
-                <p>Tipos de documentos</p> <a href="#" class="boton boton_selec">Editar</a>
+                <p>Tipos de documentos</p> <a href="./view_configuration_document.php" class="boton boton_selec">Editar</a>
             </div>
             <div>
                 <p>Roles</p> <a href="./view_configuration_role.php" class="boton boton_selec">Editar</a>

@@ -1,5 +1,5 @@
 <?php
-    include ("../Controladores/class_tipo.php");
+    include ("../controllers/class_document.php");
     if (!isset($_POST["guardar"])){
         $id_tipo = $_GET["id_tipo"];
         $nombre_tipo = $_GET["nombre_tipo"];

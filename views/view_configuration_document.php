@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- language -->
+<?php include_once "../static/language.php" ?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="styles.css">
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_all_settings.css">
 </head>
-<img src="../Imagenes/Logo/logo_fondo_2.PNG" alt="" class="fondo">
-<header id=header>
-    <div class="logo">
-        <h2>Imagitec</h2>
-        <img src="../Imagenes/Logo/logo_red.PNG" alt="Logo" width=100px>
-    </div>
-</header>
+<!-- header secondary page -->
+<?php include_once "../static/headers/headers_secondary_page.php" ?>
 <body id="body">
     <!-- inicio del formulario -->
-    <form action="./enviar.php" method="POST" class="formulario">
+    <form action="../models/model_create_configuration_document.php" method="POST" class="formulario">
         <!-- contenedor nombre -->
         <label for="nombre_persona">Tipo de Documento</label>
         <div class="a1">
@@ -32,8 +25,8 @@
                 ?>
                 <input type="text" name="" class="creados" value="<?php echo $product -> nombre_del_tipo?>" readonly>
 
-                <a href="../Configuracion_tipo_actualizar/index.php?id_tipo=<?php echo $product -> id_tipo?> & nombre_tipo=<?php echo $product->nombre_del_tipo?>" class="boton_cancelar boton_selec">Editar</a>
-                <a href="./borrar.php?id_tipo=<?php echo $product -> id_tipo ?>" class="boton_cancelar boton_selec">Borrar</a>
+                <a href="./view_update_configuration_document.php?id_tipo=<?php echo $product -> id_tipo?> & nombre_tipo=<?php echo $product->nombre_del_tipo?>" class="boton_cancelar boton_selec">Editar</a>
+                <a href="../models/model_delete_configuration_document.php?id_tipo=<?php echo $product -> id_tipo ?>" class="boton_cancelar boton_selec">Borrar</a>
                  
                 <?php endforeach;?>
             </div>
@@ -41,7 +34,7 @@
  
         
         <div class="contenedor_cancelar">
-            <a href="../Configuracion/index.php" class="boton_cancelar boton_selec">Volver</a>
+            <a href="./view_configuration.php" class="boton_cancelar boton_selec">Volver</a>
         </div>
     </form>
 </body>

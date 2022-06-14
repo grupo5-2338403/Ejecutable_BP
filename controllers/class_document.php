@@ -16,7 +16,7 @@
             $sql = "INSERT INTO tipo_de_documento (nombre_del_tipo) VALUES (:tipo)"; 
             $result = $database->prepare($sql);
             $result -> execute (array(":tipo"=> $this -> strNombre));
-            header("Location:../Configuracion_tipo/index.php");
+            header("Location:../views/view_configuration_document.php");
         }
         public function actualizar_tipo($id){
             $this -> intId = intval($id);
@@ -24,7 +24,7 @@
             $sql ="UPDATE tipo_de_documento SET nombre_del_tipo =:nombre WHERE id_tipo =:id";
             $info = $database -> prepare ($sql);
             $info -> execute(array(":nombre"=> $this -> strNombre, ":id"=>$this -> intId));
-            header("Location:../Configuracion_tipo/index.php");
+            header("Location:../views/view_configuration_document.php");
             
         }
         public static function borrar_tipo($id){
@@ -32,7 +32,7 @@
             // echo var_dump($id);
             include("../conectar_BD_2.php");
             $database->query( "DELETE FROM tipo_de_documento WHERE id_tipo='$id'");
-            header("Location:../Configuracion_tipo/index.php");
+            header("Location:../views/view_configuration_document.php");
         }
 
     }
