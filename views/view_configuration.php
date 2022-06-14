@@ -23,7 +23,7 @@
                 <p>Tipos de documentos</p> <a href="#" class="boton boton_selec">Editar</a>
             </div>
             <div>
-                <p>Roles</p> <a href="../Configuracion_rol" class="boton boton_selec">Editar</a>
+                <p>Roles</p> <a href="./view_configuration_role.php" class="boton boton_selec">Editar</a>
             </div>
         </div>
         <div class="a1">

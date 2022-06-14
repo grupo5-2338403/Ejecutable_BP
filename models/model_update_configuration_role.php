@@ -1,5 +1,5 @@
 <?php
-    include ("../Controladores/class_rol.php");
+    include ("../controllers/class_role.php");
     if (!isset($_POST["guardar"])){
         $id_rol = $_GET["id_rol"];
         $nombre_rol = $_GET["nombre_rol"];

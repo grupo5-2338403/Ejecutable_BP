@@ -16,7 +16,7 @@
             $sql = "INSERT INTO rol (nombre_rol) VALUES (:rol)"; 
             $result = $database->prepare($sql);
             $result -> execute (array(":rol"=> $this -> strNombre));
-            header("Location:../Configuracion_rol/index.php");
+            header("Location:../views/view_configuration_role.php");
         }
         public function actualizar_rol($id){
             $this -> intId = intval($id);
@@ -24,7 +24,7 @@
             $sql ="UPDATE rol SET nombre_rol =:nombre WHERE id_rol =:id";
             $info = $database -> prepare ($sql);
             $info -> execute(array(":nombre"=> $this -> strNombre, ":id"=>$this -> intId));
-            header("Location:../Configuracion_rol/index.php");
+            header("Location:../views/view_configuration_role.php");
             
         }
         public static function borrar_rol($id){
@@ -32,7 +32,7 @@
             // echo var_dump($id);
             include("../conectar_BD_2.php");
             $database->query( "DELETE FROM rol WHERE id_rol='$id'");
-            header("Location:../Configuracion_rol/index.php");
+            header("Location:../views/view_configuration_role.php");
         }
 
     }
