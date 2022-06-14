@@ -42,7 +42,7 @@
         <div class="a1">
             <h2 class="titulo">Pagos</h2>
             <div>
-                <p>Método de pago</p> <a href="../Configuracion_pago/index.php" class="boton boton_selec">Editar</a>
+                <p>Método de pago</p> <a href="./view_configuration_payment.php" class="boton boton_selec">Editar</a>
             </div>
         </div>
         <div class="contenedor_cancelar">

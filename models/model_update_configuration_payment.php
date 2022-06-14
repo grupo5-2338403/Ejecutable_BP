@@ -1,5 +1,5 @@
 <?php
-    include ("../Controladores/class_pago.php");
+    require("../controllers/class_payment.php");
     if (!isset($_POST["guardar"])){
         $id_pago = $_GET["id_pago"];
         $nombre_pago = $_GET["nombre_pago"];
