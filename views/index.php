@@ -33,7 +33,7 @@
                 <button class="boton_buscar" type="submit" name="Refrescar" value="Refrescar">Listar</button>       
         </form>
 		</div>
-		<a class="mi_carrito" href="../Carrito/index.php">Mi carrito</a>
+		<a class="mi_carrito" href="./view_cart.php">Mi carrito</a>
 	</div>      
 </header>
 <body id="body">

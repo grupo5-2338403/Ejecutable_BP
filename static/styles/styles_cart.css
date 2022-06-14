@@ -1,37 +1,3 @@
-*{
-    margin:0px;
-    padding:0px;
-    /* border:0px; */ 
-    font-family: cursive;
-    z-index: 2;
-}
-#body{
-    background-color: rgb(235, 235, 235);
-    
-}
-.fondo{
-    position: fixed;
-    margin: 100px 30%;
-    z-index: -23;
-}
-
-#header{
-    text-align: right;
-    width: 15rem;
-    /* border: 1px solid red; */
-    background-color: red;
-    margin: 0px 0px 0px auto;
-    border-bottom-left-radius: 50px ;
-    
-}
-.logo{
-    display:flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    color:white;
-    column-gap: 20px;
-}
 #producto{
     width:80%;
     /* border: 1px solid red; */

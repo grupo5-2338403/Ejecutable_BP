@@ -1,24 +1,15 @@
-<?php 
-    require ("./carrito.php")
-?>
 <!DOCTYPE html>
-<html lang="en">
+<!-- language -->
+<?php include_once "../static/language.php" ?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="../Validacion/validacion.js"></script>
+    <?php require ("../models/model_cart.php")?>
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_cart.css">
+    <script src="../validations/validacion.js"></script>
 </head>
+<!-- header secondary page -->
+<?php include_once "../static/headers/headers_secondary_page.php" ?>
 <body id="body">
-    <img src="../Imagenes/Logo/logo_fondo.PNG" alt="" class="fondo">
-    <header id="header">
-        <div class="logo">
-            <h2>Imagitec</h2>
-            <img src="../Imagenes/Logo/logo_red.PNG" alt="Logo" width=100px>
-        </div>
-    </header>
     <section id="section">
         <?php
             if(isset($_SESSION["producto"])){            
@@ -103,8 +94,8 @@
             </div>
         </article>
         <div id="botones">
-            <a href="../Principal/Index.php" class="boton volver" >Seguir Comprando</a>
-            <a href="<?php if(isset($_SESSION["id_usuario"])){ echo '../Compra/index.php'; } else { echo '../Iniciar_sesion/index.php?alarma=2';} ?>" class="boton seguir"  onClick="return validarCarrito(<?php if(isset($_SESSION["producto"])){if(empty($_SESSION["producto"])){echo "0"; }else{ echo "1";}} ?>)">Ir a pagar
+            <a href="./index.php" class="boton volver" >Seguir Comprando</a>
+            <a href="<?php if(isset($_SESSION["id_usuario"])){ echo '../view_purchase.php'; } else { echo './view_login.php?alarma=2';} ?>" class="boton seguir"  onClick="return validarCarrito(<?php if(isset($_SESSION["producto"])){if(empty($_SESSION["producto"])){echo "0"; }else{ echo "1";}} ?>)">Ir a pagar
             </a>
         </div>
     </section>
