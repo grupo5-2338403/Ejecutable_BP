@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- language -->
+<?php include_once "../static/language.php" ?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="styles.css">
+    <?php require_once "../models/model_update_product.php" ?>
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_update_product.css">
 </head>
-<img src="../Imagenes/Logo/logo_fondo_2.PNG" alt="" class="fondo">
-<header id=header>
-    <div class="logo">
-        <h2>Imagitec</h2>
-        <img src="../Imagenes/Logo/logo_red.PNG" alt="Logo" width=100px>
-    </div>
-</header>
+<!-- header secondary page -->
+<?php include_once "../static/headers/headers_secondary_page.php" ?>
 <body id="body">
-    <?php require "./actualizar.php"?>
     <section> 
-        <form action="./actualizar.php" class="formulario" enctype="multipart/form-data" method="post">
+        <form action="../models/model_update_product.php" class="formulario" enctype="multipart/form-data" method="post">
             <div class="contenedor_imagen">
                 <label for="imagen">Imagen del producto<br>
                     <img src="<?php echo $ruta?>" class="imagen"><br>
@@ -94,7 +87,7 @@
             </div>
             <!-- Contenerdor del boton de enviar -->
             <div class="contenedor_cancelar">
-                <a href="../Principal/Index.php" class="boton_cancelar boton_selec">Cancelar</a>
+                <a href="./index.php" class="boton_cancelar boton_selec">Cancelar</a>
             </div>
             <div class="contenedor_envio">
                 <input type="submit" value="enviar" class="boton_enviar boton_selec" name="enviar">

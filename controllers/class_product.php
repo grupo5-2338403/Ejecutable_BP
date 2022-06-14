@@ -40,14 +40,14 @@
             $info = $database->prepare($sql);
             $info -> execute(array(":miFoto"=>$this -> strFoto, ":miNombre"=>$this -> strNombre, ":miValor"=>$this -> floatValor, ":miStock"=>$this -> intStock, ":miEstado"=>$this -> intEstado, ":miCategorias"=> $this-> intCategoria, ":miMarca"=> $this-> intMarca, ":miDescripcion"=>$this -> strDescripcion, ":miId"=> $this-> intId));
 
-            header("Location:../Principal/Index.php");
+            header("Location:../views/index.php");
         }
         public static function borrar_producto($id){
             $id = intval($id);
             // echo var_dump($id);
             include("../conectar_BD_2.php");
             $database->query( "DELETE FROM producto WHERE id_producto='$id'");
-            header("Location:../Principal/Index.php");
+            header("Location:../views/index.php");
         }
 
     }

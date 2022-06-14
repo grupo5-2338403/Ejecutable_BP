@@ -1,5 +1,5 @@
 <?php
-    require("../Controladores/class_producto.php");
+    require("../controllers/class_product.php");
         
     if(!isset($_POST["enviar"])){
         $id_pro = $_GET["id"];
@@ -14,7 +14,7 @@
         
     }
     else{
-        $ruta = '../Imagenes/' . $_FILES["imagen"]["name"];
+        $ruta = '../data/images/external/products/' . $_FILES["imagen"]["name"];
         move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
         $id_pro =  $_POST["id_producto"];
         $ruta_2 = $_POST["url_imagen"];
@@ -25,7 +25,7 @@
         $categoria = $_POST["categoria_producto"];
         $marca = $_POST["marca_producto"];
         $descripcion = $_POST["descripcion_producto"];
-        if ($ruta == "../Imagenes/"){
+        if ($ruta == "../data/images/external/products/"){
             $ruta = $ruta_2;
         }
         
