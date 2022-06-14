@@ -29,7 +29,7 @@
         <div class="a1">
             <h2 class = "titulo">Productos</h2>
             <div>
-                <p>Marcas</p> <a href="../Configuracion_marca/index.php" class="boton boton_selec">Editar</a>
+                <p>Marcas</p> <a href="./view_configuration_brand.php" class="boton boton_selec">Editar</a>
             </div>
             <div>
                 <p>Estados</p> <a href="./view_configuration_state.php" class="boton boton_selec">Editar</a>

@@ -1,5 +1,5 @@
 <?php
-    include ("../Controladores/class_marca.php");
+    include ("../controllers/class_brand.php");
     if (!isset($_POST["guardar"])){
         $id_marca = $_GET["id_marca"];
         $nombre_marca = $_GET["nombre_marca"];
