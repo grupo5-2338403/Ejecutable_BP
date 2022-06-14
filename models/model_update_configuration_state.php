@@ -1,5 +1,5 @@
 <?php
-    include ("../Controladores/class_estado.php");
+    include ("../controllers/class_states.php");
     if (!isset($_POST["guardar"])){
         $id_estado = $_GET["id_estado"];
         $nombre_estado = $_GET["nombre_estado"];

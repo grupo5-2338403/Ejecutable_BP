@@ -20,7 +20,7 @@
                 <p>Ciudades</p>  <a href="./view_configuration_cities.php" class="boton boton_selec">Editar</a>
             </div>
             <div>
-                <p>Tipos de documentos</p> <a href="./view_configuration_categories.php" class="boton boton_selec">Editar</a>
+                <p>Tipos de documentos</p> <a href="#" class="boton boton_selec">Editar</a>
             </div>
             <div>
                 <p>Roles</p> <a href="../Configuracion_rol" class="boton boton_selec">Editar</a>
@@ -32,10 +32,10 @@
                 <p>Marcas</p> <a href="../Configuracion_marca/index.php" class="boton boton_selec">Editar</a>
             </div>
             <div>
-                <p>Estados</p> <a href="../Configuracion_estado/index.php" class="boton boton_selec">Editar</a>
+                <p>Estados</p> <a href="./view_configuration_state.php" class="boton boton_selec">Editar</a>
             </div>
             <div>
-                <p>Categorias</p> <a href="../Configuracion_categorias/index.php" class="boton boton_selec">Editar</a>
+                <p>Categorias</p> <a href="view_configuration_categories.php" class="boton boton_selec">Editar</a>
             </div>
 
         </div>
