@@ -2,7 +2,7 @@
     require("../controllers/class_product.php");
         
     if(isset($_POST["enviar"])){
-        $ruta = '../Imagenes/' . $_FILES["imagen"]["name"];
+        $ruta = '../data/images/external/products/' . $_FILES["imagen"]["name"];
         move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
         $nombre = $_POST["nombre_producto"];
         $valor = $_POST["valor_producto"];
