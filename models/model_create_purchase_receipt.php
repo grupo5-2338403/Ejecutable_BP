@@ -1,6 +1,6 @@
 <?php
-require ("../Controladores/class_compra.php");
-require ("../Controladores/class_comprobante.php");
+require ("../controllers/class_purchase.php");
+require ("../controllers/class_receipt.php");
 
 session_start();
 date_default_timezone_set('America/Bogota');
@@ -28,7 +28,7 @@ if(isset($_POST["enviar"])){
             // header("Location:../Comprobante/index.php");
         endforeach;
     }else{
-        header("Location:../Iniciar_sesion/index.php?alarma=2");
+        header("Location:../views/view_login.php?alarma=2");
     }
 
 }

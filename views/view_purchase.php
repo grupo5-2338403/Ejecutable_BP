@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- language -->
+<?php include_once "../static/language.php" ?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="./styles.css">
-   
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_purchase.css">
 </head>
+<!-- header secondary page -->
+<?php include_once "../static/headers/headers_secondary_page.php" ?>
 <body id="body">
-    <img src="../Imagenes/Logo/logo_fondo.PNG" alt="" class="fondo">
-    <header id="header">
-        <div class="logo">
-            <h2>Imagitec</h2>
-            <img src="../Imagenes/Logo/logo_red.PNG" alt="Logo" width=100px>
-        </div>
-    </header>
     <section>
-        <form action="./envio.php" method="POST" class="formulario">
+        <form action="../models/model_create_purchase_receipt.php" method="POST" class="formulario">
             <div class="contenedor_pago">
                 <label for="">Métodos de pago</label>
                 <select name="metodo_de_pago">
@@ -34,7 +26,7 @@
             </div>
             <div class="contenedor_botones">
                 <div class="">
-                    <a href="../Carrito/index.php" class="boton_cancelar boton_selec">Volver</a>
+                    <a href="./view_cart.php" class="boton_cancelar boton_selec">Volver</a>
                 </div>
                 <div class="contenedor_envio">
                     <input type="submit" value="enviar" name="enviar" class="boton_enviar boton_selec">

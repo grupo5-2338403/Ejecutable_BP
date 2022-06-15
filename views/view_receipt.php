@@ -16,23 +16,15 @@ function traer_nombre($condicion, $base, $busca, $traer){
     }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<!-- language -->
+<?php include_once "../static/language.php" ?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImagiTec</title>
-    <link rel="stylesheet" href="./styles.css">
-   
+    <?php include_once "../static/heads/head_secondary_page.php" ?>
+    <link rel="stylesheet" href="../static/styles/styles_receipt.css">
 </head>
+<!-- header secondary page -->
+<?php include_once "../static/headers/headers_secondary_page.php" ?>
 <body id="body">
-    <img src="../Imagenes/Logo/logo_fondo.PNG" alt="" class="fondo">
-    <header id="header">
-        <div class="logo">
-            <h2>Imagitec</h2>
-            <img src="../Imagenes/Logo/logo_red.PNG" alt="Logo" width=100px>
-        </div>
-    </header>
     <section class="section">
         <?php session_start();?>
         <h3>Compras</h3>
@@ -73,7 +65,7 @@ function traer_nombre($condicion, $base, $busca, $traer){
         </div>
         <?php endforeach;?>
         <div class="contenedor_botones">
-                <a href="../Principal/Index.php" class="boton_cancelar boton_selec">Volver</a>
+                <a href="./index.php" class="boton_cancelar boton_selec">Volver</a>
             <form class="contenedor_envio">
                 <input type="submit" name="imprimir" value="Imprimir" class="boton_enviar boton_selec">
             </form>

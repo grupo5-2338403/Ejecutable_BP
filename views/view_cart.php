@@ -5,7 +5,7 @@
     <?php require ("../models/model_cart.php")?>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_cart.css">
-    <script src="../validations/validacion.js"></script>
+    <script src="../validations/validate_cart.js"></script>
 </head>
 <!-- header secondary page -->
 <?php include_once "../static/headers/headers_secondary_page.php" ?>
@@ -30,7 +30,7 @@
                             $clave = array_search($e, $_SESSION["producto"]);
                             unset($_SESSION["producto"][$clave]);
                             $cantidad_carrito -= 1;                           
-                            header("Location:../Principal/Index.php?alerta=1");
+                            header("Location:../views/views_cart.php?alerta=1");
                         }
                     }   
             ?>
@@ -45,7 +45,7 @@
                 <input type="text" id="cantidad" class="acercarse2" name="<?php echo $e ?>" value="<?php echo $contador[$e]?>" min=1>
                 <p class="acercarse">Valor:</p>
                 <p class="acercarse2">$<?php echo $product->valor_producto?></p>
-                <a href="./index.php?eliminar=<?php echo $e ?>" class="boton_quitar_carrito">Quitar del carrito</a>
+                <a href="./view_cart.php?eliminar=<?php echo $e ?>" class="boton_quitar_carrito">Quitar del carrito</a>
             </div>
         </article>
         </form>
@@ -95,7 +95,7 @@
         </article>
         <div id="botones">
             <a href="./index.php" class="boton volver" >Seguir Comprando</a>
-            <a href="<?php if(isset($_SESSION["id_usuario"])){ echo '../view_purchase.php'; } else { echo './view_login.php?alarma=2';} ?>" class="boton seguir"  onClick="return validarCarrito(<?php if(isset($_SESSION["producto"])){if(empty($_SESSION["producto"])){echo "0"; }else{ echo "1";}} ?>)">Ir a pagar
+            <a href="<?php if(isset($_SESSION["id_usuario"])){ echo './view_purchase.php'; } else { echo './view_login.php?alarma=2';} ?>" class="boton seguir"  onClick="return validate_cart(<?php if(isset($_SESSION["producto"])){if(empty($_SESSION["producto"])){echo "0"; }else{ echo "1";}} ?>)">Ir a pagar
             </a>
         </div>
     </section>

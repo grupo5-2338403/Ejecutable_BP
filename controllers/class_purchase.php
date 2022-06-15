@@ -26,7 +26,7 @@
             $_SESSION["id_comprobante"] = $id_comprobante;
             $database->query("INSERT INTO compra (cantidad, usuarios_id_usuario, producto_id_producto, comprobante_id_comprobante) VALUES ('".$this -> intCantidad."', '".$this -> intUsuario."', '".$this -> intProducto."',  '".$id_comprobante."')");
             $_SESSION["producto"] = null;
-            header("Location:../Comprobante/index.php");
+            header("Location:../views/view_receipt.php");
         }
 
         static function traer_nombre($condicion, $base, $busca, $traer){

@@ -9,7 +9,7 @@
             array_push($_SESSION["producto"], intval($_GET["id_producto"]));
         }
     
-        header("Location:../Principal/Index.php");
+        header("Location:../views/index.php");
     }
     if (isset($_GET["eliminar"])){
         $contador = array_count_values($_SESSION["producto"]);
@@ -17,7 +17,7 @@
         if($contador[$e] > 0 ){
             $clave = array_search($e, $_SESSION["producto"]);
             unset($_SESSION["producto"][$clave]);
-            header("Location:../Carrito/index.php"); 
+            header("Location:../views/view_cart.php"); 
     
         }
     }

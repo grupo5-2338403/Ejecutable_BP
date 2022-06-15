@@ -74,7 +74,7 @@
             <div class="acciones">
                 <p class="precio">$<?php echo $product->valor_producto?></p>
                  <div>
-                    <a  class="boton"href="../Carrito/index.php?id_producto=<?php echo $product -> id_producto?>">Agregar al carrito</a>
+                    <a  class="boton" href="./view_cart.php?id_producto=<?php echo $product -> id_producto?>">Agregar al carrito</a>
                 </div>
                 <div>
                     <a href="./view_update_product.php?id=<?php echo $product->id_producto?> & ruta=<?php echo $product->url_foto_producto?> & nombre=<?php echo $product->nombre_producto?> & valor=<?php echo $product->valor_producto?> & stock=<?php echo $product->stock?> & estado=<?php echo $product->estado_id_estado?> & categorias=<?php echo $product->categorias_id_categorias?> & marca=<?php echo $product->marca_id_marca ?> & descripcion=<?php echo $product->descripcion?>" class="boton">Modificar producto</a>

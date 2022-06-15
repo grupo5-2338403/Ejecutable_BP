@@ -1,0 +1,56 @@
+/* Aquí esta esta creado la decoración periferica del formulario */
+#body{
+    width: 100%;
+    margin: 0px auto;
+    box-sizing: border-box;
+    background-color: rgb(235, 235, 235);
+
+}
+.formulario{
+    display:grid;
+    width: 65%;
+    margin: 0px auto;
+    /* border: solid 1px black; */
+}
+
+.contenedor_pago{
+    display: grid;
+    text-align: center;
+    margin: 0px 300px;
+}
+
+.contenedor_botones{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 30px;
+}
+.contenedor_envio{
+    text-align: right;
+    margin-right: 15px;
+   
+}
+.boton_enviar{
+    background-color: green;
+    color:white;
+    width: 6em;
+    border-radius: 1em;
+    padding: 2px 0px;
+    font-size: 15px;
+    font-weight: none;
+}
+.boton_cancelar{
+    background-color: green;
+    color:white;
+    width: 6em;
+    border-radius: 1em;
+    padding: 2px 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: none;
+}
+.desaparece{
+    display:none;
+}
+.boton_selec:hover{
+    background-color: black;
+}
