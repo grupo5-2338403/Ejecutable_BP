@@ -86,7 +86,7 @@
             require "../conectar_BD_2.php";
             $info = $database -> query("SELECT * FROM  usuarios where nameuser='".$user."' and password_persona='".$pass."'")->fetchAll(PDO::FETCH_OBJ);
 
-            if($info != $a){
+            if($info){
                 foreach ($info as $product):
                     $usuarios = $product -> nameuser;
                     $password = $product -> password_persona;

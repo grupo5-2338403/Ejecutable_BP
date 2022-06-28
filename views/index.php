@@ -1,17 +1,17 @@
+<?php session_start(); ?>
+<?php
+    if(isset($_GET["alerta"])){
+        echo "<script> alert ('A superado la cantidad disponible de este produto')</script>";
+    }
+    if(isset($_GET["alarma"]) && $_GET["alarma"] == 1){
+        echo "<script> alert ('Este usuario no tiene los permisos de acceder aquí')</script>";
+    }
+?>
 <!DOCTYPE html>
 <?php include_once "../static/language.php" ?>
 <head>
     <?php include_once "../static/heads/head_without_styles.php"?>
     <link rel="stylesheet" href="../static/styles/styles_index.css">
-    <?php session_start(); ?>
-    <?php
-        if(isset($_GET["alerta"])){
-            echo "<script> alert ('A superado la cantidad disponible de este produto')</script>";
-        }
-        if(isset($_GET["alarma"])){
-            echo "<script> alert ('Este usuario no tiene los permisos de acceder aquí')</script>";
-        }
-    ?>
 </head>
 <img src="../data/images/internal/logo//logo_fondo.PNG" alt="" class="fondo">
 <header id="header">
