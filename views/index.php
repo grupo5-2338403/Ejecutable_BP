@@ -3,17 +3,22 @@
 <head>
     <?php include_once "../static/heads/head_without_styles.php"?>
     <link rel="stylesheet" href="../static/styles/styles_index.css">
-</head>
-<img src="../data/images/internal/logo//logo_fondo.PNG" alt="" class="fondo">
-<header id="header">
+    <?php session_start(); ?>
     <?php
         if(isset($_GET["alerta"])){
             echo "<script> alert ('A superado la cantidad disponible de este produto')</script>";
         }
+        if(isset($_GET["alarma"])){
+            echo "<script> alert ('Este usuario no tiene los permisos de acceder aquí')</script>";
+        }
     ?>
+</head>
+<img src="../data/images/internal/logo//logo_fondo.PNG" alt="" class="fondo">
+<header id="header">
     <div class= "" >
-        <a href="./view_manage.php"><img src="../data/images/internal/administrator.png" alt="administrar" class="icono_administrador"></a>
-
+        <?php if(isset($_SESSION["id_rol"]) && $_SESSION["id_rol"] == 1){ ?>
+            <a href="./view_manage.php"><img src="../data/images/internal/administrator.png" alt="administrar" class="icono_administrador"></a>
+        <?php } ?>        
     </div>
 	<h1 class="imagitec">IMAGITEC</h1>
 	<div class="botones_inicio">
@@ -21,8 +26,12 @@
 			<li>
 				<a class="mi_cuenta" href="#">Mi cuenta</a>
 				<ul>
-					<li><a href="./view_login.php">Iniciar sesión</a></li>
-					<li><a href="#mi">Ver cuenta</a></li>
+                    <?php if(isset($_SESSION["id_usuario"])){ ?>
+                        <li><a href="../models/model_sign_off.php">Cerrar sesión</a></li>
+    					<li><a href="#mi">Ver cuenta</a></li>
+                    <?php }else{ ?>
+                        <li><a href="./view_login.php">Iniciar sesión</a></li>
+                    <?php } ?>
 				</ul>
 			</li>
 		</ul>
@@ -76,12 +85,14 @@
                  <div>
                     <a  class="boton" href="./view_cart.php?id_producto=<?php echo $product -> id_producto?>">Agregar al carrito</a>
                 </div>
-                <div>
-                    <a href="./view_update_product.php?id=<?php echo $product->id_producto?> & ruta=<?php echo $product->url_foto_producto?> & nombre=<?php echo $product->nombre_producto?> & valor=<?php echo $product->valor_producto?> & stock=<?php echo $product->stock?> & estado=<?php echo $product->estado_id_estado?> & categorias=<?php echo $product->categorias_id_categorias?> & marca=<?php echo $product->marca_id_marca ?> & descripcion=<?php echo $product->descripcion?>" class="boton">Modificar producto</a>
-                </div>
-                <div>
-                    <a href="../models/model_delete_products.php?id=<?php echo $product->id_producto?>" class="boton">Eliminar producto</a>
-                </div>
+                <?php if(isset($_SESSION["id_rol"]) && $_SESSION["id_rol"] == 1){ ?>
+                    <div>
+                        <a href="./view_update_product.php?id=<?php echo $product->id_producto?> & ruta=<?php echo $product->url_foto_producto?> & nombre=<?php echo $product->nombre_producto?> & valor=<?php echo $product->valor_producto?> & stock=<?php echo $product->stock?> & estado=<?php echo $product->estado_id_estado?> & categorias=<?php echo $product->categorias_id_categorias?> & marca=<?php echo $product->marca_id_marca ?> & descripcion=<?php echo $product->descripcion?>" class="boton">Modificar producto</a>
+                    </div>
+                    <div>
+                        <a href="../models/model_delete_products.php?id=<?php echo $product->id_producto?>" class="boton">Eliminar producto</a>
+                    </div>
+                <?php } ?>
             </div>
         </article>
         <?php endforeach;?>
@@ -92,9 +103,11 @@
             <p>telefono: 208490</p>
             <p>correo: compra@imagitec.com</p>
         </div>
-        <div class="configuracion">
-            <a href="./view_configuration.php"><img src="../data/images/internal/settings.png" alt="Configuración" class="icono_configuracion"><a>
-        </div>
+        <?php if(isset($_SESSION["id_rol"]) && $_SESSION["id_rol"] == 1){ ?>
+            <div class="configuracion">
+                <a href="./view_configuration.php"><img src="../data/images/internal/settings.png" alt="Configuración" class="icono_configuracion"><a>
+            </div>
+        <?php } ?>
     </footer>
     
 </body>

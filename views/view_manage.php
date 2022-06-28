@@ -4,6 +4,7 @@
 <head>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_manage.css">
+    <?php require_once("../permissions/manager.php")?>
 </head>
 <!-- header secondary page -->
 <?php include_once "../static/headers/headers_secondary_page.php" ?>

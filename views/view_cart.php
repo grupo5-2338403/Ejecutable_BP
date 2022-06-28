@@ -42,7 +42,7 @@
             </div>
             <div class="botones_producto">
                 <label for="cantidad" class="acercarse">Cantidad:</label>
-                <input type="text" id="cantidad" class="acercarse2" name="<?php echo $e ?>" value="<?php echo $contador[$e]?>" min=1>
+                <p id="cantidad" class="acercarse2" name="<?php echo $e ?>" ><?php echo $contador[$e]?></p>
                 <p class="acercarse">Valor:</p>
                 <p class="acercarse2">$<?php echo $product->valor_producto?></p>
                 <a href="./view_cart.php?eliminar=<?php echo $e ?>" class="boton_quitar_carrito">Quitar del carrito</a>
@@ -99,6 +99,5 @@
             </a>
         </div>
     </section>
- 
 </body>
 </html>

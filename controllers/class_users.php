@@ -100,13 +100,13 @@
                     header("Location:../views/index.php");                  
                 endforeach;
             }
-            else{                
-                
+            else{                 
                 header("Location:../views/view_login.php?alarma=1");
             }
         }
 
-        public function cerrar_sesion(){
+        static function cerrar_sesion(){
+            session_start();
             session_destroy();
         }
         
