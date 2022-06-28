@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
+<?php include_once ("../models/model_update_configuration_role.php") ?>
 <head>
-    <?php include_once ("../models/model_update_configuration_role.php") ?>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_update_all_settings.css">
 </head>

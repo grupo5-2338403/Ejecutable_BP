@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
+<?php require_once "../models/model_update_product.php" ?>
 <head>
-    <?php require_once "../models/model_update_product.php" ?>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_update_product.css">
 </head>

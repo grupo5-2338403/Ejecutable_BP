@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
+<?php require ("../models/model_update_configuration_state.php") ?>
 <head>
-    <?php require ("../models/model_update_configuration_state.php") ?>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_update_all_settings.css">
 </head>
