@@ -1,3 +1,4 @@
+<?php require_once("../permissions/manager.php")?>
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
@@ -5,7 +6,6 @@
     <?php require_once ("../controllers/class_users.php"); ?>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_create_products.css"> 
-    <?php require_once("../permissions/manager.php")?>
 </head>
 <!-- header secondary page -->
 <?php include_once "../static/headers/headers_secondary_page.php" ?>

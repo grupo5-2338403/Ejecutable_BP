@@ -1,3 +1,4 @@
+<?php require_once("../permissions/manager.php")?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <!-- language -->
@@ -6,7 +7,6 @@
     <?php require_once ("../models/model_update_configuration_brand.php") ?>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_update_all_settings.css">
-    <?php require_once("../permissions/manager.php")?>
 </head>
 <!-- header secondary page -->
 <?php include_once "../static/headers/headers_secondary_page.php" ?>

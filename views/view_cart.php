@@ -1,8 +1,8 @@
+<?php require ("../models/model_cart.php")?>
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
 <head>
-    <?php require ("../models/model_cart.php")?>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_cart.css">
     <script src="../validations/validate_cart.js"></script>
