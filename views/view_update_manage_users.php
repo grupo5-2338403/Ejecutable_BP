@@ -13,7 +13,7 @@
 
 <body id="body">
     <!-- inicio del formulario -->
-    <form action="../models/model_update_manage_users.php" method="POST" class="formulario">
+    <form action="" method="POST" class="formulario">
 
         <!-- contenedor nombre -->
         <div class="a1">

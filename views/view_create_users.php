@@ -1,3 +1,10 @@
+<?php 
+    if(isset($_GET["alarma"])){
+        if($_GET["alarma"] == "1"){
+            echo "<script> alert('El usuario ya existe')</script>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
@@ -31,7 +38,7 @@
         <!-- contenedor numero de documento -->
         <div class="a1">
             <label for="numero_documento">Númerdo de documento</label>
-            <input class="a2" type="number" name="numero_documento" min="999999999" max="99999999999" required>
+            <input class="a2" type="number" name="numero_documento" required>
         </div>
         <!-- contendedor username -->
         <div class="a1">
@@ -46,12 +53,12 @@
         <!-- Contenedor número celular -->
         <div class="a1">
             <label for="">Número celular</label>
-            <input class="a2" type="tel" name="numero_celular" required min="9999999999" max="999999999990">
+            <input class="a2" type="tel" name="numero_celular" required >
         </div>
         <!-- Contenedor Número fijo -->
         <div class="a1">
             <label for="numero_fijo">Número Fijo</label>
-            <input class="a2" type="tel" name="numero_fijo" required min="9999999999" max="999999999990">
+            <input class="a2" type="tel" name="numero_fijo" required >
         </div>
         <!-- Contenedor Dirección -->
         <div class="a1">
