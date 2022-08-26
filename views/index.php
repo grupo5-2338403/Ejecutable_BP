@@ -83,7 +83,11 @@
             <div class="acciones">
                 <p class="precio">$<?php echo $product->valor_producto?></p>
                  <div>
-                    <a  class="boton" href="./view_cart.php?id_producto=<?php echo $product -> id_producto?>">Agregar al carrito</a>
+                    <?php if(isset($_SESSION["id_usuario"])){ ?>
+                        <a  class="boton" href="./view_cart.php?id_producto=<?php echo $product -> id_producto?>">Agregar al carrito</a>
+                    <?php } else{?>
+                        <a  class="boton" href="./view_login.php?alarma=4">Agregar al carrito</a>
+                    <?php } ?>
                 </div>
                 <?php if(isset($_SESSION["id_rol"]) && $_SESSION["id_rol"] == 1){ ?>
                     <div>
