@@ -1,14 +1,8 @@
-<?php 
-    if(isset($_GET["alarma"])){
-        if($_GET["alarma"] == "1"){
-            echo "<script> alert('El usuario ya existe')</script>";
-        }
-    }
-?>
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
 <head>
+    <?php include_once("../utilities/alerts.php")?>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_create_users.css">
 </head>

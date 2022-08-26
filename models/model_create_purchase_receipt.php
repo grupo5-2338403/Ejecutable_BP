@@ -27,10 +27,7 @@ if(isset($_POST["enviar"])){
             $obj_compra -> crear_compra();
             // header("Location:../Comprobante/index.php");
         endforeach;
-    }else{
-        header("Location:../views/view_login.php?alarma=2");
     }
-
 }
 
 ?>
