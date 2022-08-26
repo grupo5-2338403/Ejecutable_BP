@@ -21,7 +21,7 @@
             $obj_usuario -> setPassword($password);
             $obj_usuario -> crear_usuario();
         }else{
-            header("Location:../views/view_create_users.php?alarma=1");                   
+            header("Location:../views/view_create_users.php?alerta=7");                   
         }
     }
 ?>

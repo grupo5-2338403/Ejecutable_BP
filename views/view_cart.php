@@ -30,7 +30,7 @@
                             $clave = array_search($e, $_SESSION["producto"]);
                             unset($_SESSION["producto"][$clave]);
                             $cantidad_carrito -= 1;                           
-                            header("Location:../views/views_cart.php?alerta=1");
+                            header("Location:../views/index.php?alerta=5");
                         }
                     }   
             ?>
@@ -95,7 +95,7 @@
         </article>
         <div id="botones">
             <a href="./index.php" class="boton volver" >Seguir Comprando</a>
-            <a href="<?php if(isset($_SESSION["id_usuario"])){ echo './view_purchase.php'; } else { echo './view_login.php?alarma=2';} ?>" class="boton seguir"  onClick="return validate_cart(<?php if(isset($_SESSION["producto"])){if(empty($_SESSION["producto"])){echo "0"; }else{ echo "1";}} ?>)">Ir a pagar
+            <a href="<?php if(isset($_SESSION["id_usuario"])){ echo './view_purchase.php'; } else { echo './view_login.php?alerta=2';} ?>" class="boton seguir"  onClick="return validate_cart(<?php if(isset($_SESSION["producto"])){if(empty($_SESSION["producto"])){echo "0"; }else{ echo "1";}} ?>)">Ir a pagar
             </a>
         </div>
     </section>

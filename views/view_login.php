@@ -1,21 +1,7 @@
-<?php 
-    if(isset($_GET["alarma"])){
-        if($_GET["alarma"] == "1"){
-            echo "<script> alert('El usuario o la contraseña es invalida')</script>";
-        }
-        else if($_GET["alarma"] == "2") {
-            echo "<script> alert('Inicie sesión para poder hacer la compra')</script>";
-        }
-        else if($_GET["alarma"] == "3") {
-            echo "<script> alert('Inicie sesión para poder acceder a esta página')</script>";
-        }else if($_GET["alarma"]== "4"){
-            echo "<script> alert('Inicie sesión para poder agregar el producto al carrito')</script>";
-        }
-    }
-?>
 <!DOCTYPE html>
 <?php include_once "../static/language.php"?>
 <head>
+    <?php include_once "../utilities/alerts.php"?>
     <?php include_once "../static/heads/head_without_styles.php"?>
     <link rel="stylesheet" href="../static/styles/styles_login.css">
 </head>

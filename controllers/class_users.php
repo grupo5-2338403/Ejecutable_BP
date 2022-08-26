@@ -101,7 +101,7 @@
                 endforeach;
             }
             else{                 
-                header("Location:../views/view_login.php?alarma=1");
+                header("Location:../views/view_login.php?alerta=1");
             }
         }
 
