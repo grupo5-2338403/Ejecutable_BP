@@ -43,6 +43,11 @@
         </form>
 		</div>
 		<a class="mi_carrito" href="./view_cart.php">Mi carrito</a>
+        <?php if(isset($_SESSION["producto"])){ ?>
+            <span class="contador_carrito">
+                <?php echo count($_SESSION["producto"]);?>
+            <span>
+        <?php } ?>
 	</div>      
 </header>
 <body id="body">

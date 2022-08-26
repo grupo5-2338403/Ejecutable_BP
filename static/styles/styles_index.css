@@ -110,6 +110,17 @@
     border-radius: 1em;
     padding: 0px 5px;
 }
+/* El contador del carrito */
+.contador_carrito{
+    position: absolute;
+    top: 90px; right: 15px;
+    text-decoration: none;
+    color:white;
+    border-radius: 999%;
+    padding: 1px 6px 2px 6px;
+    background-color:rgb(41, 41, 212);
+    font-size: 15px;
+}
 /* menú */
 /* configuración del menú general */
 #nav{
