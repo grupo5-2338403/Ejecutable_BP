@@ -8,6 +8,8 @@
         }
         else if($_GET["alarma"] == "3") {
             echo "<script> alert('Inicie sesión para poder acceder a esta página')</script>";
+        }else if($_GET["alarma"]== "4"){
+            echo "<script> alert('Inicie sesión para poder agregar el producto al carrito')</script>";
         }
     }
 ?>
