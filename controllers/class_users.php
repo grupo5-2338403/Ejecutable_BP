@@ -32,7 +32,7 @@
         }
 
         public function setPassword($password){
-            $this -> strPassword = $password;
+            $this -> strPassword = password_hash($password, PASSWORD_DEFAULT, ['cost' => 5]);
         }
 
         public function crear_usuario(){
@@ -84,9 +84,9 @@
             session_start();
             $_SESSION["user"] = null;
             require "../conectar_BD_2.php";
-            $info = $database -> query("SELECT * FROM  usuarios where nameuser='".$user."' and password_persona='".$pass."'")->fetchAll(PDO::FETCH_OBJ);
+            $info = $database -> query("SELECT * FROM  usuarios where nameuser='".$user."'")->fetchAll(PDO::FETCH_OBJ);
 
-            if($info){
+            if(isset($info[0]) && password_verify($pass, $info[0] -> password_persona)){
                 foreach ($info as $product):
                     $usuarios = $product -> nameuser;
                     $password = $product -> password_persona;
