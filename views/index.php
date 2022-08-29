@@ -28,10 +28,10 @@
 			</li>
 		</ul>
     	<div class="in_buscar"> 
-        <form action="" name="producto" method="POST">
+            <form action="" name="producto" method="POST">
                 <input type="text" name="nombre_producto" id="nombre_producto" placeholder="Coloque el nombre del producto">
                 <button class="boton_buscar" type="submit" name="buscar" value="buscar">Buscar</button>       
-                <button class="boton_buscar" type="submit" name="Refrescar" value="Refrescar">Listar</button>       
+                <button class="boton_buscar" type="submit" name="Refrescar" value="Refrescar">Todo</button>       
         </form>
 		</div>
 		<a class="mi_carrito" href="./view_cart.php">Mi carrito</a>
@@ -43,25 +43,37 @@
 	</div>      
 </header>
 <body id="body">
+    <form action="" name="producto" method="POST">
     <nav id="nav">
         <ul id="menu">
-            <li><a href="#c">Computadores de mesa</a></li>
-            <li><a href="#a">Asesorios</a></li>
+            <li><button class="menu_content" type="submit" name="computadores_mesa" value="computadores_mesa">Computadores de mesa</button></li>       
+            <li><button class="menu_content" type="submit" name="accesorios" value="accesorios">Accesorios</button></li>
             <li><a href="#t">Todo gaming</a>
                 <ul>
-                    <li><a href="#tc">Computadores gamer</a></li>
-                    <li><a href="#ta">Acessorios gamer</a></li>
-                    <li><a href="#tcc">Componentes gamer</a></li>
+                    <li><button class="menu_content" type="submit" name="computadores_gamer" value="computadores_gamer">Computadores gamer</button></li>
+                    <li><button class="menu_content" type="submit" name="accesorios_gamer" value="accesorios_gamer">Accesorios gamer</button></li>
+                    <li><button class="menu_content" type="submit" name="componentes_gamer" value="componentes_gamer">Componentes gamer</button></li>
                 </ul>
             </li>
         </ul>
     </nav>
+    </form>
     <section id=section>
         <?php require "../conectar_BD_2.php";
 
             if(isset($_POST['buscar'])){
                 $nombre_producto = $_POST['nombre_producto'];
                 $info = $database -> query("select * from producto where nombre_producto like '%$nombre_producto%' ")->fetchAll(PDO::FETCH_OBJ);
+            }else if(isset($_POST['computadores_mesa'])){
+                $info = $database -> query("select * from producto where categorias_id_categorias = 1")->fetchAll(PDO::FETCH_OBJ);
+            }else if(isset($_POST['accesorios'])){
+                $info = $database -> query("select * from producto where categorias_id_categorias = 2")->fetchAll(PDO::FETCH_OBJ);
+            }else if(isset($_POST['computadores_gamer'])){
+                $info = $database -> query("select * from producto where categorias_id_categorias = 3")->fetchAll(PDO::FETCH_OBJ);
+            }else if(isset($_POST['accesorios_gamer'])){
+                $info = $database -> query("select * from producto where categorias_id_categorias = 4")->fetchAll(PDO::FETCH_OBJ);
+            }else if(isset($_POST['componentes_gamer'])){
+                $info = $database -> query("select * from producto where categorias_id_categorias = 5")->fetchAll(PDO::FETCH_OBJ);
             }else{
                 $info = $database -> query("SELECT * FROM producto")->fetchAll(PDO::FETCH_OBJ);
             }
