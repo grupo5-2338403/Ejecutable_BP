@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php include_once "../static/language.php"?>
 <head>
-    <?php include_once "../utilities/alerts.php"?>
     <?php include_once "../static/heads/head_without_styles.php"?>
     <link rel="stylesheet" href="../static/styles/styles_login.css">
 </head>
@@ -30,4 +29,5 @@
         <a href="./index.php" class="volver">Volver</a>
     </footer>
 </body>
+<?php include_once "../utilities/alerts.php"?>
 </html>
