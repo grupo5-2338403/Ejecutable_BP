@@ -12,6 +12,7 @@
         // ALERTS FOR THE INDEX
         create_alerts("5", "Error", "A superado la cantidad disponible de este produto", "error");
         create_alerts("6","Error", "Este usuario no tiene los permisos para accedera esa página", "error");
+        create_alerts("8","OK", "El producto se agrego al carrito de compras", "success");
 
         // ALERTS FOR THE VIEW_CREATE_USERS
         create_alerts("7", "Error","El usuario ya existe", "error");
