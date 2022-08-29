@@ -190,9 +190,22 @@ ul{
     height: 150px;
 }
 .contenido{
-    grid-column: 2/5
-}
+    display: grid;
+    grid-column: 2/5;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 20% 65% 15%;
 
+}
+.name_product{
+    grid-column: 1/3;
+}
+.especificaciones{
+    grid-column: 1/3;
+}
+.componentes{
+    font-size: 14px;
+    text-align: center;
+}
 .acciones{
     text-align: center;
     display: grid;
