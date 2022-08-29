@@ -59,7 +59,9 @@
     </nav>
     </form>
     <section id=section>
-        <?php require "../conectar_BD_2.php";
+        <?php 
+            require_once "../conectar_BD_2.php";
+            require_once "../utilities/traer_nombre.php";
 
             if(isset($_POST['buscar'])){
                 $nombre_producto = $_POST['nombre_producto'];
@@ -85,9 +87,11 @@
                 <img class="imagen_ini" src="<?php echo $product->url_foto_producto?>"/>
             </div>
             <div class="contenido">
-                <h3 class="name_p"><?php echo $product->nombre_producto?></h3>
+                <h3 class="name_product"><?php echo $product->nombre_producto?></h3>
                 <p class="especificaciones"><?php echo $product->descripcion?>
                 </p>
+                <p class="componentes"><?php echo traer_nombre($product->marca_id_marca, "marca", "id_marca", "nombre_marca");?></p>
+                <p class="componentes"><?php echo traer_nombre($product->categorias_id_categorias, "categorias", "id_categorias", "nombre_categorias");?></p>
             </div>
             <div class="acciones">
                 <p class="precio">$<?php echo $product->valor_producto?></p>
