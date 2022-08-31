@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
-<?php require_once "../models/model_update_manage_users.php" ?>
 <head>
     <?php require_once ("../controllers/class_users.php"); ?>
+    <?php require_once "../models/model_update_manage_users.php" ?>
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_update_manage_users.css">
 </head>
@@ -66,14 +66,14 @@
             <input type="text" name="direccion" value="<?php echo $direccion ?>">
         </div>
        <!-- Contenedor ciudad -->
-        <div class="a1">
-            <label for="ciudad">Ciudad</label>
-            <select name="ciudad">
+       <div class="a1">
+           <label for="ciudad">Ciudad</label>
+           <select name="ciudad">
                 <?php 
                     require "../conectar_BD_2.php";
                     $info = $database -> query("SELECT * FROM ciudad") -> fetchAll(PDO::FETCH_OBJ);
                     foreach ($info as $product):
-                ?>
+                        ?>
                 <option value="<?php echo $product -> id_ciudad?>" <?php echo Usuario::marcar_option($ciudad, $product->id_ciudad)?> ><?php echo $product -> nombre_ciudad?></option>
                 <?php endforeach; ?>          
             </select>
@@ -94,9 +94,25 @@
                     ?>            
                 </select>
             </div>
-        <?php } ?>
-        <div class="a1 desaparecer">
-            <label for="">id</label>
+        <?php }else{ ?>
+            <div class="a1 desaparecer">
+                <label for="rol">Rol</label>
+                <select name="rol">
+                    <?php 
+                        require "../conectar_BD_2.php";
+                        $info = $database -> query("SELECT * FROM rol") -> fetchAll(PDO::FETCH_OBJ);
+                        foreach ($info as $product):
+                    ?>
+                    <option value="<?php echo $product->id_rol ?>" <?php echo Usuario::marcar_option($rol, $product->id_rol) ?> ><?php echo $product-> nombre_rol?></option>
+                    <?php 
+                    endforeach; 
+                    ?>            
+                </select>
+            </div>
+
+            <?php } ?>
+            <div class="a1 desaparecer">
+                <label for="">id</label>
             <input type="text" value="<?php echo $id_usuario ?>" name="id_usuario">
         </div>
         <?php if(isset($_SESSION["id_rol"]) && $_SESSION["id_rol"] == 1){ ?>
@@ -107,7 +123,7 @@
             <div class="contenedor_cancelar">
                 <a href="./view_my_account.php" class="boton_cancelar boton_selec">Cancelar</a>
             </div>
-        <?php } ?>
+            <?php } ?>
         <div class="contenedor_envio">
             <input type="submit" value="Guardar" name="guardar" class="boton_enviar boton_selec">
         </div>
@@ -115,4 +131,4 @@
 </body>
 </html>
 
- <!-- --> 
+<!-- --> 
