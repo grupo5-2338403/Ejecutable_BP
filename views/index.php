@@ -20,7 +20,7 @@
 				<ul>
                     <?php if(isset($_SESSION["id_usuario"])){ ?>
                         <li><a href="../models/model_sign_off.php">Cerrar sesión</a></li>
-    					<li><a href="#mi">Ver cuenta</a></li>
+    					<li><a href="./view_my_account.php">Ver cuenta</a></li>
                     <?php }else{ ?>
                         <li><a href="./view_login.php">Iniciar sesión</a></li>
                     <?php } ?>

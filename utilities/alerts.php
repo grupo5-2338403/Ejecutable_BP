@@ -6,7 +6,7 @@
         // ALERTS FOR THE VIEW_LOGIN
         create_alerts("1", "Error" ,"El usuario o la contraseña es invalida", "error");
         create_alerts("2", "Error", "Inicie sesión para poder hacer la compra", "error");
-        create_alerts("3", "Error", "Inicie sesión para poder acceder a esta página", "error");
+        create_alerts("3", "Error", "Inicie sesión para poder acceder a esa página", "error");
         create_alerts("4", "Error", "Inicie sesión para poder agregar el producto al carrito", "error");
 
         // ALERTS FOR THE INDEX
