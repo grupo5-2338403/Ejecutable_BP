@@ -44,8 +44,7 @@
                 </div>
             </section>
             <div class="gestores">
-                <a class="boton" href="">Modificar</a>
-                <a class="boton"href="">Eliminar</a>
+                <a class="boton" href="./view_update_manage_users.php?id_usuario=<?php echo $user->id_usuario?> & tipo=<?php echo $user -> tipo_de_documento_id_tipo ?> & ciudad=<?php echo $user->ciudad_id_ciudad?> & rol=<?php echo $user->rol_id_rol?> & nombre_persona=<?php echo $user->nombre_persona?> & apellido_persona=<?php echo $user->apellido_persona?> & numero_identificacion=<?php echo $user->numero_identificación?>  & nameuser=<?php echo $user->nameuser?> & celular=<?php echo $user->celuar?>  & fijo=<?php echo $user->fijo?> & direccion=<?php echo $user->direccion?>">Modificar</a>
             </div>
         <?php
                 endforeach;

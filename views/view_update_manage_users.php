@@ -1,4 +1,4 @@
-<?php require_once("../permissions/manager.php")?>
+<?php require_once("../permissions/client.php")?>
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
@@ -79,29 +79,35 @@
             </select>
         </div>
         <!-- Contenedor rol -->
-        
-        <div class="a1">
-            <label for="rol">Rol</label>
-            <select name="rol">
-                <?php 
-                    require "../conectar_BD_2.php";
-                    $info = $database -> query("SELECT * FROM rol") -> fetchAll(PDO::FETCH_OBJ);
-                    foreach ($info as $product):
-                ?>
-                <option value="<?php echo $product->id_rol ?>" <?php echo Usuario::marcar_option($rol, $product->id_rol) ?> ><?php echo $product-> nombre_rol?></option>
-                <?php 
-                endforeach; 
-                ?>            
-            </select>
-        </div>
+        <?php if(isset($_SESSION["id_rol"]) && $_SESSION["id_rol"] == 1){ ?>
+            <div class="a1">
+                <label for="rol">Rol</label>
+                <select name="rol">
+                    <?php 
+                        require "../conectar_BD_2.php";
+                        $info = $database -> query("SELECT * FROM rol") -> fetchAll(PDO::FETCH_OBJ);
+                        foreach ($info as $product):
+                    ?>
+                    <option value="<?php echo $product->id_rol ?>" <?php echo Usuario::marcar_option($rol, $product->id_rol) ?> ><?php echo $product-> nombre_rol?></option>
+                    <?php 
+                    endforeach; 
+                    ?>            
+                </select>
+            </div>
+        <?php } ?>
         <div class="a1 desaparecer">
             <label for="">id</label>
             <input type="text" value="<?php echo $id_usuario ?>" name="id_usuario">
         </div>
-        
-        <div class="contenedor_cancelar">
-            <a href="./view_manage_users.php" class="boton_cancelar boton_selec">Cancelar</a>
-        </div>
+        <?php if(isset($_SESSION["id_rol"]) && $_SESSION["id_rol"] == 1){ ?>
+            <div class="contenedor_cancelar">
+                <a href="./view_manage_users.php" class="boton_cancelar boton_selec">Cancelar</a>
+            </div>
+        <?php }else{?>
+            <div class="contenedor_cancelar">
+                <a href="./view_my_account.php" class="boton_cancelar boton_selec">Cancelar</a>
+            </div>
+        <?php } ?>
         <div class="contenedor_envio">
             <input type="submit" value="Guardar" name="guardar" class="boton_enviar boton_selec">
         </div>
