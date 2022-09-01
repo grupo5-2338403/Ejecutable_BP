@@ -4,20 +4,39 @@
     margin: 0px auto;
 
 }
-.compras{
+.person{
+    background-color: white;
+    border-radius: 1em;
+    padding: 10px;
     display: grid;
+    grid-template-columns: 50% 50%;
+}
+.compras{
     margin: 20px 0px;
+    background-color: white;
+    border-radius: 1em;
+    padding: 10px;
+}
+.productos{
+    padding-bottom: 15px;
 }
 .titulos{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 55% 15% 15% 15%;
 }
 .contenido{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 55% 15% 15% 15%;
+
+}
+.totales{
+    padding-top: 15px;
+    display: grid;
+    grid-template-columns: 55% 15% 15% 15%;
 }
 
 .a1{
+    grid-column: 3/5;
     display:grid;
     grid-template-columns: repeat(2, 1fr);
 }
