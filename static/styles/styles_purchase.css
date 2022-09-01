@@ -1,11 +1,3 @@
-/* Aquí esta esta creado la decoración periferica del formulario */
-#body{
-    width: 100%;
-    margin: 0px auto;
-    box-sizing: border-box;
-    background-color: rgb(235, 235, 235);
-
-}
 .formulario{
     display:grid;
     width: 65%;
