@@ -4,6 +4,9 @@
 <head>
     <?php include_once "../static/heads/head_without_styles.php"?>
     <link rel="stylesheet" href="../static/styles/styles_index.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="../utilities/currency_format.js"></script>
+
 </head>
 <img src="../data/images/internal/logo//logo_fondo.PNG" alt="" class="fondo">
 <header id="header">
@@ -94,7 +97,7 @@
                 <p class="componentes"><?php echo traer_nombre($product->categorias_id_categorias, "categorias", "id_categorias", "nombre_categorias");?></p>
             </div>
             <div class="acciones">
-                <p class="precio">$<?php echo $product->valor_producto?></p>
+                <p class="precio"><?php echo "<script>document.write(currency_format($product->valor_producto))</script>" ?></p>
                  <div>
                     <?php if(isset($_SESSION["id_usuario"])){ ?>
                         <a  class="boton" href="./view_cart.php?id_producto=<?php echo $product -> id_producto?>">Agregar al carrito</a>
