@@ -6,6 +6,8 @@
     <?php include_once "../static/heads/head_secondary_page.php" ?>
     <link rel="stylesheet" href="../static/styles/styles_cart.css">
     <script src="../validations/validate_cart.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="../utilities/currency_format.js"></script>
 </head>
 <!-- header secondary page -->
 <?php include_once "../static/headers/headers_secondary_page.php" ?>
@@ -44,7 +46,7 @@
                 <label for="cantidad" class="acercarse">Cantidad:</label>
                 <p id="cantidad" class="acercarse2" name="<?php echo $e ?>" ><?php echo $contador[$e]?></p>
                 <p class="acercarse">Valor:</p>
-                <p class="acercarse2">$<?php echo $product->valor_producto?></p>
+                <p class="acercarse2"><?php echo "<script>document.write(currency_format($product->valor_producto))</script>" ?></p>
                 <a href="./view_cart.php?eliminar=<?php echo $e ?>" class="boton_quitar_carrito">Quitar del carrito</a>
             </div>
         </article>
@@ -71,12 +73,16 @@
                 <!-- /////////////////////////// -->
                 <p class="producto_name"><?php echo $product->nombre_producto ?></p>
                 <p class="cantidad_2" id="<?php echo $e?>"><?php echo $contador[$e]?></p>
-                <p class="valor">$<?php echo $product->valor_producto?></p>
-                <p class="sub_total">$<?php echo $_SESSION["sub_total"] = $product->valor_producto * $contador[$e]; if (isset($total)){
+                <p class="valor"><?php echo "<script>document.write(currency_format($product->valor_producto))</script>"?></p>
+                <p class="sub_total"><?php $_SESSION["sub_total"] = $product->valor_producto * $contador[$e]; if (isset($total)){
                     $total += $_SESSION["sub_total"];
                 }else{
                     $total = $_SESSION["sub_total"];
-                }?></p>
+
+                }
+                $sub_total =$_SESSION["sub_total"];
+                echo "<script>document.write(currency_format($sub_total))</script>";
+                ?></p>
                 <?php
                         endforeach;
                     endforeach;  
@@ -88,7 +94,7 @@
                 <p class="total_num"><?php
                 if(isset($total)){
                     $_SESSION["total"] = $total; 
-                    echo "$" . $_SESSION["total"];
+                    echo "<script>document.write(currency_format($_SESSION[total]))</script>";
                 } 
                 ?></p>  
             </div>
