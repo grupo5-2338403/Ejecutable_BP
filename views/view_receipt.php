@@ -1,9 +1,9 @@
+<?php session_start();?>
 <?php
     if(isset($_GET["imprimir"])){
         echo "<script>print()</script>";
     }
 ?>
-<?php session_start();?>
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
