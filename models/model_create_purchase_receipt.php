@@ -1,8 +1,8 @@
 <?php
+session_start();
 require ("../controllers/class_purchase.php");
 require ("../controllers/class_receipt.php");
 
-session_start();
 date_default_timezone_set('America/Bogota');
 
 
@@ -25,7 +25,6 @@ if(isset($_POST["enviar"])){
             $obj_compra = new Compra();
             $obj_compra -> setCompra($cantidad, $id_producto, $id_usuario);
             $obj_compra -> crear_compra();
-            // header("Location:../Comprobante/index.php");
         endforeach;
     }
 }
