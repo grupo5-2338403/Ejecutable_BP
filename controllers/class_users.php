@@ -32,7 +32,7 @@
         }
 
         public function setPassword($password){
-            $this -> strPassword = $password;
+            $this -> strPassword = password_hash($password, PASSWORD_DEFAULT, ['cost' => 5]);
         }
 
         public function crear_usuario(){
@@ -45,12 +45,17 @@
         }
 
         public function actualizar_usuario($id){
+            session_start();
             $this -> intId = intval($id);
             include("../conectar_BD_2.php");
             $sql ="UPDATE usuarios SET nombre_persona=:nombre, apellido_persona=:apellido, numero_identificación=:documento, nameuser=:usuario, celuar=:celular, fijo=:fijo, direccion=:direccion, ciudad_id_ciudad=:ciudad, tipo_de_documento_id_tipo=:tipo, rol_id_rol=:rol WHERE id_usuario=:id";
             $info = $database->prepare($sql);
             $info -> execute(array(":nombre"=>$this -> strNombre, ":apellido"=>$this -> strApellido, ":documento"=>$this -> intDocumento, ":usuario"=>$this -> strUsername, ":celular"=>$this -> intCelular, ":fijo"=> $this-> intFijo, ":direccion"=> $this-> strDireccion, ":ciudad"=>$this -> intCiudad, ":tipo"=> $this-> intTipo, ":rol"=>$this -> intRol, ":id"=> $this-> intId));
-            header("Location:../views/view_manage_users.php");
+            if(isset($_SESSION["id_rol"]) && $_SESSION["id_rol"] == 1){ 
+                header("Location:../views/view_manage_users.php");
+            }else{
+                header("Location:../views/view_my_account.php");
+            }
         }
 
         public static function borrar_usuario($id){
@@ -84,9 +89,9 @@
             session_start();
             $_SESSION["user"] = null;
             require "../conectar_BD_2.php";
-            $info = $database -> query("SELECT * FROM  usuarios where nameuser='".$user."' and password_persona='".$pass."'")->fetchAll(PDO::FETCH_OBJ);
+            $info = $database -> query("SELECT * FROM  usuarios where nameuser='".$user."'")->fetchAll(PDO::FETCH_OBJ);
 
-            if($info){
+            if(isset($info[0]) && password_verify($pass, $info[0] -> password_persona)){
                 foreach ($info as $product):
                     $usuarios = $product -> nameuser;
                     $password = $product -> password_persona;
@@ -101,7 +106,7 @@
                 endforeach;
             }
             else{                 
-                header("Location:../views/view_login.php?alarma=1");
+                header("Location:../views/view_login.php?alerta=1");
             }
         }
 

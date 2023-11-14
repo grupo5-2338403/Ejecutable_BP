@@ -11,18 +11,17 @@
     <section>
         <form action="../models/model_create_purchase_receipt.php" method="POST" class="formulario">
             <div class="contenedor_pago">
-                <label for="">Métodos de pago</label>
-                <select name="metodo_de_pago">
-                    <?php
-                    include ("../conectar_BD_2.php");
-                    $info = $database->query("SELECT * FROM pago")->fetchAll(PDO::FETCH_OBJ); 
-                    foreach($info as $product):
-                    ?>
-                        <option value="<?php echo $product->id_pago ?>"><?php echo $product->metodo_de_pago?></option>
-                    <?php
-                    endforeach;
-                    ?>
-            </select>
+                <h3 class="title">Métodos de pago</h3>
+                <?php require "../conectar_BD_2.php";
+                    $info = $database -> query("SELECT * FROM pago")->fetchAll(PDO::FETCH_OBJ);
+                    foreach ($info as $product):
+                ?>  
+                <div class="pagos">
+                    <img class="imagen_ini" src="<?php echo $product->url_foto_pago?>"/>
+                    <p class="creados"><?php echo $product -> metodo_de_pago?></p>
+                    <input type="radio" value="<?php echo $product->id_pago?>" name="metodo_de_pago" class="circulo" required>
+                </div>
+                <?php endforeach;?>
             </div>
             <div class="contenedor_botones">
                 <div class="">

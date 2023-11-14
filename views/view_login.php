@@ -1,16 +1,3 @@
-<?php 
-    if(isset($_GET["alarma"])){
-        if($_GET["alarma"] == "1"){
-            echo "<script> alert('El usuario o la contraseña es invalida')</script>";
-        }
-        else if($_GET["alarma"] == "2") {
-            echo "<script> alert('Inicie sesión para poder hacer la compra')</script>";
-        }
-        else if($_GET["alarma"] == "3") {
-            echo "<script> alert('Inicie sesión para poder acceder a esta página')</script>";
-        }
-    }
-?>
 <!DOCTYPE html>
 <?php include_once "../static/language.php"?>
 <head>
@@ -42,4 +29,5 @@
         <a href="./index.php" class="volver">Volver</a>
     </footer>
 </body>
+<?php include_once "../utilities/alerts.php"?>
 </html>

@@ -30,7 +30,6 @@
             $sql = "INSERT INTO producto (url_foto_producto, nombre_producto, valor_producto, stock, estado_id_estado, categorias_id_categorias, marca_id_marca, descripcion) VALUES (:foto, :nombre, :valor, :stock, :estado, :categorias, :marca, :descripcion)";
             $result = $database->prepare($sql);
             $result -> execute(array( ":foto"=> $this -> strFoto, ":nombre"=>$this -> strNombre, ":valor"=>$this -> floatValor, ":stock"=>$this -> intStock, ":estado"=> $this -> intEstado, ":categorias"=>$this -> intCategoria,":marca"=>$this->intMarca, ":descripcion"=>$this -> strDescripcion));
-            echo ("listo");
             header("Location:../views/index.php");
         }
         public function actualizar_producto($id){

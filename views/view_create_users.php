@@ -1,10 +1,3 @@
-<?php 
-    if(isset($_GET["alarma"])){
-        if($_GET["alarma"] == "1"){
-            echo "<script> alert('El usuario ya existe')</script>";
-        }
-    }
-?>
 <!DOCTYPE html>
 <!-- language -->
 <?php include_once "../static/language.php" ?>
@@ -97,6 +90,7 @@
         </div>
     </form>
 </body>
+<?php include_once("../utilities/alerts.php")?>
 </html>
 
  <!-- --> 

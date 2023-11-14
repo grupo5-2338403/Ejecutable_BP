@@ -9,7 +9,7 @@
             array_push($_SESSION["producto"], intval($_GET["id_producto"]));
         }
     
-        header("Location:../views/index.php");
+        header("Location:../views/index.php?alerta=8");
     }
     if (isset($_GET["eliminar"])){
         $contador = array_count_values($_SESSION["producto"]);
